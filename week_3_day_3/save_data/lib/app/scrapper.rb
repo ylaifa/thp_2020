@@ -9,7 +9,6 @@ require 'open-uri'
 class Scrapper
     def get_townhall_email(townhall_url)
     # Fetch and parse HTML document
-
     doc = Nokogiri::HTML(open(townhall_url))
 
     return doc.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text
@@ -33,8 +32,6 @@ class Scrapper
         end
         townhall_urls_array
     end
-
-    # get_townhall_urls
 
     def hash_with_name_and_email_townhall
         a = Array.new
