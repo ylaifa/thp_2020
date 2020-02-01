@@ -4,8 +4,7 @@ class Gossip
     attr_accessor :author, :content
 
     def initialize(author, content)
-        @content = content
-        @author = author
+        @content, @author = content, author
     end
 
     def save
@@ -18,8 +17,7 @@ class Gossip
         all_gossips = Array.new
       
         CSV.open("db/gossip.csv", "r").each do |row|
-            gossip_temporary = Gossip.new(row[0], row[1])
-            all_gossips << gossip_temporary
+            all_gossips << Gossip.new(row[0], row[1]) # pas utile de créer un objet si tu ne le rappelles pas - ça permet aussi de réfléchir au code et au pourquoi créer des objets ?
         end
         return all_gossips
     end
