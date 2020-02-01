@@ -14,9 +14,7 @@ class Scrapper
     return doc.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text
 
     end
-
-    # get_townhall_email("http://annuaire-des-mairies.com/91/abbeville-la-riviere.html")
-
+    
     # 2. Une fois que tu sais le faire pour une mairie, 
     # tu vas vouloir industrialiser et répéter ça sur tout l'annuaire du Val d'Oise. 
     # La prochaine étape est de coder une méthode get_townhall_urls qui récupère les URLs de chaque ville du Val d'Oise.
