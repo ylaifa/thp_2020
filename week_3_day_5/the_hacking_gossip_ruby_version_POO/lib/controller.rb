@@ -8,7 +8,8 @@ class Controller
 
     def create_gossip
         params = @view.create_gossip
-        Gossip.create(params[:author], params[:content]) # car tu ne run aucune opération entre le moment où tu instancies ton gossip et le save (pas d'erreur si pas save, pas de validation...)
+        gossip = Gossip.new(params[:author], params[:content])
+        gossip.save
     end
 
     def index_gossips
