@@ -28,7 +28,7 @@ class Scrapper
         doc.xpath('//*[@class="lientxt"]').each do |name|
             townhall_urls_array << "http://annuaire-des-mairies.com/95/" + "#{name[:href][5..-6]}" + ".html"
         end
-        townhall_urls_array
+        return townhall_urls_array
     end
 
     def hash_with_name_and_email_townhall
