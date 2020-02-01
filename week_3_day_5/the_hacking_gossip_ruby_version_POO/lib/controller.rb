@@ -20,5 +20,5 @@ class Controller
         gossips = Gossip.all
         delete_gossip_choice = @view.delete_gossip(gossips)
         Gossip.delete(gossips, delete_gossip_choice)
-      end
+    end
 end
