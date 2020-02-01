@@ -14,7 +14,7 @@ class View
     end
 
     def index_gossips(gossips)
-        if gossips.length < 1
+        if gossips.empty? #tu checkes que ton array existe et qu'il est vide
             puts "Il n'y a pas de gossip a afficher."
             puts "\n"
         end
@@ -25,7 +25,7 @@ class View
     end
 
     def delete_gossip (gossips)
-        if gossips.length < 1
+        if gossips.empty? #tu checkes que ton array existe et qu'il est vide
             puts "Il n'y a pas de gossip a supprimer."
             puts "\n"
             Router.new.perform
