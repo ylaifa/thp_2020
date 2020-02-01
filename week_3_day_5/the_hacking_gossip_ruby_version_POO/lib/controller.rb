@@ -22,3 +22,4 @@ class Controller
         Gossip.delete(gossips, delete_gossip_choice)
     end
 end
+
