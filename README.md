@@ -8,3 +8,4 @@
     - Day 5 : MVC
 # Week 4 : Initiation à Rails
     - Day 3 : Passage de SQL à ActiveRecord
+    - Day 4 : relation entre BDD
