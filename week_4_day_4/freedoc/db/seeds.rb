@@ -36,9 +36,6 @@ end
 doctors = Doctor.all 
 specialities = Speciality.all
 
-i = doctors.length 
-10.times do
-    Doctor.find(i).specialities = specialities.sample(2)
-    i -= 1
-end
-
+doctors.each do |doctor|
+    doctor.specialities = specialities.sample(2)
+end 
