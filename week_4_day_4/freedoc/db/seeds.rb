@@ -18,8 +18,8 @@ Speciality.destroy_all
 end
 
 10.times do 
-    Doctor.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, zip_code: Faker::Alphanumeric.alphanumeric(number: 5, min_alpha: 3), city_id: Faker::Number.between(from: City.last.id - 30, to: City.last.id))
-    Patient.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, city_id: Faker::Number.between(from: City.last.id - 30, to: City.last.id))
+    Doctor.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, zip_code: Faker::Alphanumeric.alphanumeric(number: 5, min_alpha: 3), city: City.all.sample)
+    Patient.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, city: City.all.sample)
 end
 
 specialities = ["Generalist", "ORL", "Dentist", "Neurologist"]
@@ -30,7 +30,7 @@ specialities.each do |speciality|
 end
 
 20.times do
-    Appointment.create(date: Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today), doctor: Doctor.last(10).sample, patient: Patient.last(10).sample, city_id: Faker::Number.between(from: City.last.id - 30, to: City.last.id))
+    Appointment.create(date: Faker::Date.between_except(from: 1.year.ago, to: 1.year.from_now, excepted: Date.today), doctor: Doctor.all.sample, patient: Patient.all.sample, city: City.all.sample)
 end
 
 doctors = Doctor.all 

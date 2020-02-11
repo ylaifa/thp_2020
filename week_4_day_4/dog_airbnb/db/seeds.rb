@@ -12,13 +12,13 @@ require 'faker'
 end
 
 20.times do
-    Dogsitter.create(name: Faker::Name.name, city_id: Faker::Number.between(from: 1, to: 15))
+    Dogsitter.create(name: Faker::Name.name, city: City.all.sample)
 end
 
 20.times do
-    Dog.create(name: Faker::Creature::Dog.name, city_id: Faker::Number.between(from: 1, to: 15))
+    Dog.create(name: Faker::Creature::Dog.name, city: City.all.sample)
 end
 
 40.times do
-    Stroll.create(dogsitter_id: Faker::Number.between(from: 1, to: 20), dog_id: Faker::Number.between(from: 1, to: 20))
+    Stroll.create(dogsitter: Dogsitter.all.sample, dog: Dog.all.sample)
 end
